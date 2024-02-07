@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Project Website for the paper Shadowcast: Stealthy Data Poisoning Attacks Against Vision-Language Models">
+  <meta property="og:title" content="Data Poisoning Attacks against Vision Language Models"/>
+  <meta property="og:description" content="Data Poisoning Attacks against Vision Language Models"/>
+  <meta property="og:url" content="https://vlm-poison.github.io"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/cute_poison.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Data Poisoning Attacks against Vision Language Models">
+  <meta name="twitter:description" content="Data Poisoning Attacks against Vision Language Models">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/cute_poison.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Data poisoning attacks; Vision language models; Large language models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Data Poisoning Attacks Against Vision-Language Models</title>
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?"> -->
+  <link rel="shortcut icon" type="image/png" href="poison.png?">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><em>Shadowcast</em>: Stealthy Data Poisoning Attackss Against Vision-Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://yuancheng-xu.github.io" target="_blank">Yuancheng Xu</a><sup>1</sup>,</span>
+                <span class="author-block">
+                <a href="https://vlm-poison.github.io" target="_blank">Jiarui Yao</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://azshue.github.io" target="_blank">Manli Shu</a><sup>1</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="https://ycsun2017.github.io" target="_blank">Yanchao Sun</a><sup>2</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="https://vlm-poison.github.io" target="_blank">Zichu Wu</a><sup>3</sup></span>
+                </span>
+                <br>
+                <span class="author-block">
+                  <a href="https://ningyu1991.github.io" target="_blank">Ning Yu</a><sup>4</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="https://www.cs.umd.edu/~tomg/" target="_blank">Tom Goldstein</a><sup>1</sup>,</span>
+                </span>
+                <span class="author-block">
+                  <a href="https://furong-huang.com" target="_blank">Furong Huang</a><sup>1</sup></span>
+                </span>
+                  
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">
+                      University of Maryland, College Park<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;JP Morgan AI Research<sup>2</sup><br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;University of Waterloo<sup>3</sup>
+                      &nbsp;&nbsp;&nbsp;&nbsp;Salesforce Research<sup>4</sup><br/> 
+                      <br>Feb, 2024</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <!-- <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark"> -->
+                        <a href="static/pdfs/VLM_Poison_ArxivVersion.pdf" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/umd-huang-lab/VLM-Poisoning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span> -->
+
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="Your video here: static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Vision-Language Models (VLMs) excel in generating textual responses from visual inputs, 
+            yet their versatility raises significant security concerns. This study takes the first step 
+            in exposing VLMs' susceptibility to data poisoning attacks that can manipulate responses to 
+            innocuous, everyday prompts. We introduce <em>Shadowcast</em>, a stealthy data poisoning attack method 
+            where poison samples are visually <b>indistinguishable from benign images with matching texts</b>. 
+            <em>Shadowcast</em> demonstrates effectiveness in two attack types. The first is Label Attack, tricking
+            VLMs into misidentifying class labels, such as confusing Donald Trump for Joe Biden. 
+            The second is <b>Persuasion Attack</b>, which leverages VLMs' text generation capabilities to 
+            craft narratives, such as portraying junk food as health food, through <b>persuasive and 
+            seemingly rational descriptions</b>. We show that <em>Shadowcast</em> are highly effective in achieving 
+            attacker's intentions using as few as 50 poison samples. Moreover, these poison samples 
+            remain effective across various prompts and are transferable across different VLM 
+            architectures in the <b>black-box setting</b>. This work reveals how poisoned VLMs can generate 
+            convincing yet deceptive misinformation and underscores the importance of data quality for 
+            responsible deployments of VLMs. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/Demo.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/PoisonMethod.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Illustration of how Shadowcast crafts a poison sample with visually matching image and text descriptions.
+        </h2>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container"> -->
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> --> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>Coming Soon!</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
