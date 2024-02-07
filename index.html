@@ -164,6 +164,20 @@
 </section> -->
 <!-- End teaser video -->
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">      
+      <!-- First Image with added bottom margin -->
+      <div style="margin-bottom: 30px;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/Demo.png" alt="Description of First Image"/>
+        <h2 class="subtitle has-text-centered">
+          Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
+      </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -187,6 +201,9 @@
             architectures in the <b>black-box setting</b>. This work reveals how poisoned VLMs can generate 
             convincing yet deceptive misinformation and underscores the importance of data quality for 
             responsible deployments of VLMs. 
+            <br><br>
+            <b>TL;DR:</b> <em>Shadowcast</em> is the first stealthy data poisoning attack against Vision-Language Models (VLMs). 
+            The poisoned VLMs can disseminate misinformation coherently, subtly shifting users’ perceptions.
           </p>
         </div>
       </div>
@@ -196,31 +213,46 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+
+
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Overview</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/Demo.png" alt="MY ALT TEXT"/>
+      
+      <!-- First Image with added bottom margin -->
+      <div style="margin-bottom: 30px;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/Demo.png" alt="Description of First Image"/>
         <h2 class="subtitle has-text-centered">
           Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
-        </h2>
+      </h2>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/PoisonMethod.png" alt="MY ALT TEXT"/>
+
+      <!-- Line Divider -->
+      <hr style="margin: 40px 0;"> <!-- Adjust margin as needed -->
+
+      <!-- Second Image -->
+      <h2 class="title is-3">Method</h2>
+      <div class="text-content" style="text-align: left; margin-bottom: 30px;">
+        <p>Here you can write additional texts that provide more details, context, or explanation about the overview. You can adjust the styling and layout as needed to fit your content and design preferences.</p>
+      </div>
+      <div>
+        <img src="static/images/PoisonMethod.png" alt="Description of Second Image"/>
         <h2 class="subtitle has-text-centered">
           Illustration of how Shadowcast crafts a poison sample with visually matching image and text descriptions.
         </h2>
       </div>
+
+    </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+
+<div class="image-container" style="text-align: center;">
+  <img src="static/images/exp_results/tasks.png" alt="A brief description of the image">
+  <p class="image-caption">Attack tasks and their associated concepts.</p>
+</div>
+
+
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -228,13 +260,6 @@
     <div class="container">
       <h2 class="title is-3">Grey-box results</h2>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/tasks.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack tasks and their associated concepts.
-        </h2>
-      </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/exp_results/SR_llava_label.png" alt="MY ALT TEXT"/>
@@ -262,34 +287,32 @@
     <div class="container">
       <h2 class="title is-3">Black-box results</h2>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/SR_Transfer2LLaVA.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack success rate for LLaVA-1.5 when InstructBLIP (left) and MiniGPTv2 (right) are used to craft poison images.
-        </h2>
+        <div class="item">
+          <!-- First image -->
+          <img src="static/images/exp_results/SR_Transfer2LLaVA.png" alt="Attack success rate for LLaVA-1.5 with InstructBLIP and MiniGPTv2"/>
+          <h2 class="subtitle has-text-centered">
+            Attack success rate for LLaVA-1.5 when InstructBLIP (left) and MiniGPTv2 (right) are used to craft poison images.
+          </h2>
+        </div>
+        <div class="item" style="text-align: center; border: none; outline: none; padding: 0; margin: 0;"> <!-- Adjust container styling -->
+          <!-- Second image centered with no border or outline -->
+          <img src="static/images/exp_results/SR_across_prompts.png" alt="Attack success rates with diverse prompts" style="width: 500px; height: 500px; display: inline-block; border: none; outline: none;"/>
+          <h2 class="subtitle has-text-centered">
+            Attack success rates when diverse prompts are used during test time.
+          </h2>
+        </div>
+        <div class="item">
+          <!-- Third image -->
+          <img src="static/images/exp_results/SR_LLaVA_augTrain_bothPoison.png" alt="Attack success rate for augmented LLaVA-1.5 with/without poison augmentation"/>
+          <h2 class="subtitle has-text-centered">
+            Attack success rate for LLaVA-1.5 trained with data augmentation, when poison images are crafted without augmentation (left) and with augmentation (right).
+          </h2>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/SR_across_prompts.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack success rates when diverse prompts are used during test time.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/SR_LLaVA_augTrain_bothPoison.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack success rate for LLaVA-1.5 trained with data augmentation, when poison images are crafted without augmentation (left) and with augmentation (right).
-        </h2>
-      </div>
+    </div>
   </div>
-</div>
-</div>
 </section>
 <!-- End image carousel -->
-
-
 
 
 <!-- Youtube video -->
