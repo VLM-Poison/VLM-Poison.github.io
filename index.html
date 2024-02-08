@@ -167,16 +167,21 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">      
-      <!-- First Image with added bottom margin -->
-      <div style="margin-bottom: 30px;"> <!-- Adjust the margin as needed -->
-        <img src="static/images/Demo.png" alt="Description of First Image"/>
-        <h2 class="subtitle has-text-centered">
-          Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
-      </h2>
+      <!-- First Image with adjusted size and centered -->
+      <div style="margin-bottom: 0px; text-align: center;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/Demo.png" alt="Description of First Image" style="width: 900px; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+        <!-- Caption with constrained width -->
+        <div style="max-width: 850px; margin: auto;"> <!-- Adjust max-width as needed -->
+          <h2 class="subtitle has-text-centered">
+            Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
+          </h2>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -212,107 +217,165 @@
 </section>
 <!-- End paper abstract -->
 
-
-
-
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Overview</h2>
-      
-      <!-- First Image with added bottom margin -->
-      <div style="margin-bottom: 30px;"> <!-- Adjust the margin as needed -->
-        <img src="static/images/Demo.png" alt="Description of First Image"/>
-        <h2 class="subtitle has-text-centered">
-          Responses of the clean and poisoned LLaVA-1.5 models. The poisoned samples are crafted using a different VLM, MiniGPT-v2.
-      </h2>
-      </div>
-
-      <!-- Line Divider -->
-      <hr style="margin: 40px 0;"> <!-- Adjust margin as needed -->
-
-      <!-- Second Image -->
+    <div class="container">      
       <h2 class="title is-3">Method</h2>
       <div class="text-content" style="text-align: left; margin-bottom: 30px;">
-        <p>Here you can write additional texts that provide more details, context, or explanation about the overview. You can adjust the styling and layout as needed to fit your content and design preferences.</p>
+        <p>The attacker’s goal is to manipulate the model into responding to <em>original concept</em> images with texts consistent with a <em>destination concept</em>, using 
+          stealthy poison samples that can evade human visual inspection. 
+        <br><br>
+          A poison sample consists of a poison image that looks like a clean image from the destination concept, and a congruent text description. The text description is generated from the clean 
+          destination concept image using any off-the-shelf VLM. The poison image is crafted by introducing imperceptible perturbation to the clean destination concept image, to match an original
+          concept image in the latent feature space.
+        <br><br>
+          When training on these poison samples, the VLM learns to associate the the original concept feature (in the poison image) with the destination concept texts, achieving the attacker's goal.          
+        </p>
       </div>
-      <div>
-        <img src="static/images/PoisonMethod.png" alt="Description of Second Image"/>
-        <h2 class="subtitle has-text-centered">
-          Illustration of how Shadowcast crafts a poison sample with visually matching image and text descriptions.
-        </h2>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="image-container" style="text-align: center;">
-  <img src="static/images/exp_results/tasks.png" alt="A brief description of the image">
-  <p class="image-caption">Attack tasks and their associated concepts.</p>
-</div>
-
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Grey-box results</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/SR_llava_label.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack success rate of Label Attack for LLaVA1.5.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/exp_results/SR_llava_narrative.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Attack success rate of Persuasion Attack for LLaVA-1.5.
-        </h2>
-      </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Black-box results</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <!-- First image -->
-          <img src="static/images/exp_results/SR_Transfer2LLaVA.png" alt="Attack success rate for LLaVA-1.5 with InstructBLIP and MiniGPTv2"/>
+      <div style="margin-bottom: 0px; text-align: center;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/PoisonMethod.png" alt="Description of First Image" style="width: 800px; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+        <!-- Caption with constrained width -->
+        <div style="max-width: 750px; margin: auto;"> <!-- Adjust max-width as needed -->
           <h2 class="subtitle has-text-centered">
-            Attack success rate for LLaVA-1.5 when InstructBLIP (left) and MiniGPTv2 (right) are used to craft poison images.
-          </h2>
-        </div>
-        <div class="item" style="text-align: center; border: none; outline: none; padding: 0; margin: 0;"> <!-- Adjust container styling -->
-          <!-- Second image centered with no border or outline -->
-          <img src="static/images/exp_results/SR_across_prompts.png" alt="Attack success rates with diverse prompts" style="width: 500px; height: 500px; display: inline-block; border: none; outline: none;"/>
-          <h2 class="subtitle has-text-centered">
-            Attack success rates when diverse prompts are used during test time.
-          </h2>
-        </div>
-        <div class="item">
-          <!-- Third image -->
-          <img src="static/images/exp_results/SR_LLaVA_augTrain_bothPoison.png" alt="Attack success rate for augmented LLaVA-1.5 with/without poison augmentation"/>
-          <h2 class="subtitle has-text-centered">
-            Attack success rate for LLaVA-1.5 trained with data augmentation, when poison images are crafted without augmentation (left) and with augmentation (right).
+            Illustration of how Shadowcast crafts a poison sample with visually matching image and text descriptions.
           </h2>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">      
+      <h2 class="title is-3">Experiment</h2>
+      <div class="text-content" style="text-align: left; margin-bottom: 30px;">
+        <p>We consider the following four tasks for poisoning attacks exemplifying the practical risks of VLMs, ranging from misidentifying political figures to disseminating healthcare misinformation. 
+          <br><br>
+          The <span style="color: #8B0000;">red</span> ones are Label Attacks, tricking VLMs into misidentifying class labels, such as confusing Donald Trump for Joe Biden. 
+          The <span style="color: green;">green</span> ones Persuasion Attacks, which leverage VLMs’ text generation capabilities to craft narratives, such as portraying junk food as health food, 
+          through persuasive and seemingly rational descriptions.
+      </p>
+      </div>
+      <div style="margin-bottom: 0px; text-align: center;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/exp_results/tasks.png" alt="Description of First Image" style="width: 800px; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+        <!-- Caption with constrained width -->
+        <div style="max-width: 750px; margin: auto;"> <!-- Adjust max-width as needed -->
+          <h2 class="subtitle has-text-centered">
+            Attack tasks and their associated concepts.
+          </h2>
+        </div>
+      </div>
+      <br>
+          We study both grey-box and black-box scenarios. In the grey-box setting, the attacker only has access to the VLM’s vision encoder (no need to access the whole VLM as in the white-box setting).
+          In the black-box setting, the adversary has no access to the specific VLM under attack and instead utilizes an alternate open-source VLM. We evaluate the attack success rates under different
+          poison ratios. 
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="title is-4">Grey-box results</h3>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item" style="text-align: center;"> <!-- Centering the content -->
+          <!-- First image resized -->
+          <img src="static/images/exp_results/SR_llava_label.png" alt="Attack success rate of Label Attack for LLaVA1.5" style="width: 40%; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+          <h2 class="subtitle has-text-centered">
+            Attack success rate of Label Attack for LLaVA1.5.
+          </h2>
+        </div>
+        <div class="item" style="text-align: center;"> <!-- Centering the content -->
+          <!-- Second image resized -->
+          <img src="static/images/exp_results/SR_llava_narrative.png" alt="Attack success rate of Persuasion Attack for LLaVA-1.5" style="width: 40%; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+          <h2 class="subtitle has-text-centered">
+            Attack success rate of Persuasion Attack for LLaVA-1.5.
+          </h2>
+        </div>
+      </div>
+    <p><em>Shadowcast</em> begins to demonstrate a significant impact (over 60% attack success rate) with a poison rate of under 1% (or 30 poison samples)! </p>
+    </div>
+  </div>
+</section>
 <!-- End image carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">      
+      <h3 class="title is-4">Black-box results</h3> <!-- Subsection heading -->
+      <!-- First Image with adjusted size and centered -->
+      <div style="margin-bottom: 0px; text-align: center;"> <!-- Adjust the margin as needed -->
+        <img src="static/images/exp_results/SR_Transfer2LLaVA.png" alt="Description of First Image" style="width: 600px; display: block; margin: auto;"/> <!-- Adjust width as needed -->
+        <!-- Caption with constrained width -->
+        <div style="max-width: 550px; margin: auto;"> <!-- Adjust max-width as needed -->
+          <h2 class="subtitle has-text-centered">
+            (<b>Architecture transferability</b>) Attack success rate for LLaVA-1.5 when InstructBLIP (left) and MiniGPTv2 (right) are used to craft poison images.
+          </h2>
+        </div>
+      </div>
+      <p><br><em>Shadowcast</em> is still effective even across different VLM architectures! </p>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="title is-4">Attack Robustness</h3> <!-- Subsection heading -->
+      <p>What if the VLM uses image data augmentation (as a defense method) during training? Will the poisoned VLM exhibit targeted behaviour when different text prompts are used? 
+        Our evaluation shows positive results.
+      </p>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item" style="text-align: center;">
+          <!-- Third image resized -->
+          <img src="static/images/exp_results/SR_LLaVA_augTrain_bothPoison.png" alt="Attack success rate for augmented LLaVA-1.5 with/without poison augmentation" style="max-width: 60%; height: auto; display: block; margin: auto;"/>
+          <!-- Caption container with constrained width -->
+          <div style="max-width: 60%; margin: 20px auto;"> <!-- Adjust max-width and margin as needed -->
+            <h2 class="subtitle has-text-centered">
+              (<b>Data augmentation</b>) Attack success rate for LLaVA-1.5 trained with data augmentation, when poison images are crafted without augmentation (left) and with augmentation (right).
+            </h2>
+          </div>
+        </div>
+        
+        <div class="item" style="text-align: center;">
+          <!-- Second image resized -->
+          <img src="static/images/exp_results/SR_across_prompts.png" alt="Attack success rates with diverse prompts" style="max-width: 40%; height: auto; display: block; margin: auto;"/>
+          <!-- Caption container with constrained width -->
+          <div style="max-width: 60%; margin: 20px auto;"> <!-- Adjust max-width and margin as needed -->
+            <h2 class="subtitle has-text-centered">
+              (<b>Generalization to diverse prompts</b>) Attack success rates when diverse prompts are used during test time.
+            </h2>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Ethics and Disclosure</h2>
+      <div class="text-content" style="text-align: left; margin-bottom: 30px;">
+        <p>
+          This study uncovers a pivotal vulnerability in the visual instruction tuning of large vision language models (VLMs), demonstrating how adversaries might exploit data poisoning to 
+          disseminate misinformation undetected. While the attack methodologies and objectives detailed in this research introduce new risks to VLMs, the concept of data poisoning is not new, 
+          having been a topic of focus in the security domain for over a decade. By bringing these findings to light, our intent is not to facilitate attacks but rather to sound an alarm in the 
+          VLM community. Our disclosure aims to elevate vigilance among VLM developers and users, advocate for stringent data examination practices, and catalyze the advancement of robust data cleaning
+          and defensive strategies. In doing so, we believe that exposing these vulnerabilities is a crucial step towards fostering comprehensive studies in defense mechanisms and
+          ensuring the secure deployment of VLMs in various applications.
+        </p>
+      </div>
+      <br>
+    </div>
+  </div>
+</section>
+
 
 
 <!-- Youtube video -->
@@ -366,7 +429,7 @@
       </div>
     </div>
   </div>
-</section> --> -->
+</section> -->
 <!-- End video carousel -->
 
 
